@@ -1,0 +1,3 @@
+[
+	{ "keys": ["Ctrl+S"], "command": "send_mail" }
+]
