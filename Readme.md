@@ -25,4 +25,9 @@ Feel free to adjust the KeyBindings to your liking!
  * More e-mail client support: If you have any ideas on how to implement this, please fill free to open an issue on github or simply edit the plugin and create a pull request.
 
 ## Installation:
-Use fmans built in plugin installation tools.
+Use fmans built in plugin installation tools. This will install the release version that is currently created. 
+
+For a testing version, please download the source code and install it into your fman/Plugins/User directory. On linux this would be:
+
+    ~/.config/fman/Plugins/User
+
