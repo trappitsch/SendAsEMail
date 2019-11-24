@@ -10,8 +10,6 @@ class SendMail(DirectoryPaneCommand):
         # create the string for the attachment
         attachment_string = ''
         for it in chosenFiles:
-            # save it for comparing later, since zipping a folder will change it.
-            itin = str(it)
             # human readable file name
             ithr = as_human_readable(it)
             foldername = ithr.split('/')[-1]
@@ -29,10 +27,10 @@ class SendMail(DirectoryPaneCommand):
                 # inform fman that the zip file exists now
                 notify_file_added(zipname)
                 # now we want to add the zip file instead of the selected file, so change it before adding it to the string
-                it = zipname
+                ithr = zipname.replace('zip://', '')
             # attach the file to the string of what to attach to the e-mail message
-            attachment_string += it
-            if itin is not chosenFiles[-1]:
+            attachment_string += ithr
+            if it is not chosenFiles[-1]:
                 attachment_string += ','
         # set up the command to start a new e-mail message and attach it
         cmd = 'thunderbird -compose \"attachment=\'' + attachment_string + '\'\"'
